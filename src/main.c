@@ -8,7 +8,9 @@ void print_octal_no(int);
 
 void print_hexa_no(int);
 
-void add(int,int);
+void performAND(int,int);
+void performOR(int,int);
+void performXOR(int,int);
 
 int main() {
     int number,choice;
@@ -36,9 +38,12 @@ int main() {
         printf("Enter the second number:");
         scanf("%d",&num2);
         
-        performAnd();
-        performOR();
-        performXOR();
+        performAND(num1,num2);
+        printf("\n");
+        performOR(num1,num2);
+        printf("\n");
+        performXOR(num1,num2);
+        printf("\n");
     }
     else
     printf("INVALID INPUT!");
@@ -114,6 +119,29 @@ void print_hexa_no(int n){
 
     printf("\n");
 }
-void add(int a , int b){
+void performAND(int a , int b)
+{
     
+    int result = a & b;
+    print_binary_no(a);
+    print_binary_no(b);
+    printf("The AND operation between them is: %d",result);
+    printf("\n");
+    
+}
+void performOR(int a , int b)
+{
+    int result = a | b;
+    print_binary_no(a);
+    print_binary_no(b);
+    printf("The OR operation between them is: %d\n",result);
+    printf("\n");
+}
+void performXOR(int a , int b)
+{
+    int result = a ^ b;
+    print_binary_no(a);
+    print_binary_no(b);
+    printf("The XOr operation between them is: %d\n",result);
+    printf("\n");
 }
