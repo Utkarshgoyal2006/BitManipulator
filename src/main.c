@@ -1,21 +1,49 @@
 #include <stdio.h>
 
-//  Write a C program that takes any number number and converts it to binary, octal, and hex — displaying it as actual bit patterns. Then extend it to perform AND, OR, XOR on two numbers and show the result bit by bit. This teaches you bit manipulation in C (which BEL interviews ask directly) and reinforces number systems from their digital electronics syllabus. Every time you write n & 1 or n >> 1 you're doing what BEL's technical paper tests — just in code form instead of theory.
+//  Write a C program that takes any number and converts it to binary, octal, and hex — displaying it as actual bit patterns. Then extend it to perform AND, OR, XOR on two numbers and show the result bit by bit.//
+
 void print_binary_no(int );
 
 void print_octal_no(int);
 
 void print_hexa_no(int);
 
+void add(int,int);
+
 int main() {
-    int number;
+    int number,choice;
+    printf("Select which function you want to use !\n");
+    printf("\tOPTIONS\t\n");
+    printf("1. Number conversion to Decimal ,Octal ,Hexadecimal \n");
+    printf("2. Perform AND, OR, XOR operation\n");
 
-    printf("Enter the number: ");
-    scanf("%d",&number);
+    printf("Enter your choice 1 or 2 : ");
+    scanf("%d",&choice);
 
-    print_binary_no(number);
-    print_octal_no(number);
-    print_hexa_no(number);
+    if(choice== 1){
+        printf("Enter the number: ");
+        scanf("%d",&number);
+        
+        print_binary_no(number);
+        print_octal_no(number);
+        print_hexa_no(number);
+    }
+    else if (choice==2)
+    {       
+        int num1, num2;
+        printf("Enter the first number:");
+        scanf("%d",&num1);
+        printf("Enter the second number:");
+        scanf("%d",&num2);
+        
+        performAnd();
+        performOR();
+        performXOR();
+    }
+    else
+    printf("INVALID INPUT!");
+    
+
     return 0;
 }
 void print_binary_no(int n){
@@ -85,4 +113,7 @@ void print_hexa_no(int n){
     }
 
     printf("\n");
+}
+void add(int a , int b){
+    
 }
