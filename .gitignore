@@ -1,0 +1,2 @@
+*.exe 
+# this simply means that all files with the .exe extension will be ignored by Git.
